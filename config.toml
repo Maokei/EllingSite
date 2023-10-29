@@ -1,0 +1,30 @@
+baseURL = 'http://alexanderelling.com/'
+languageCode = 'en-us'
+title = 'Elling Photography'
+email = 'alexander.elling@outlook.com'
+
+[params]
+  subtitle = 'ELLING'
+  contactform = 'https://public.herotofu.com/v1/fdef2820-f283-11ed-9ea5-6d659508bc55'
+  instagramurl = 'https://www.instagram.com/mr.elling/'
+  email = 'alexander.elling@outlook.com'
+
+[menu]
+[[menu.main]]
+  name = 'Home'
+  url = '/'
+  weight = 1
+[[menu.main]]
+  name = 'About'
+  url = '/about'
+  weight = 2
+
+[mediaTypes]
+  [mediaTypes."application/x-php"]
+  suffixes = ["php"]
+
+[outputFormats]
+  [outputFormats.PHP]
+    mediaType = "application/x-php"
+    isPlainText = true
+    baseName = "index"

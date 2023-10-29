@@ -1,0 +1,47 @@
+{{ $dir := string .gallery_dir }}
+<section class="tiles">
+{{ range (readDir (print "/static" $dir)) }}
+  {{- $image := resources.Get (printf "%s/%s" $dir .Name) -}}
+  {{- $imageurl := printf "%s/%s" $dir .Name -}}
+  {{- $imagetitle := index (split .Name ".") 0 -}}
+  <article class="style1">
+    <span class="image">
+        <img src="{{ $imageurl}}" alt="" />
+    </span>
+    <a href="{{ $imageurl }}" data-fancybox="gallery">
+        <div class="content">
+        </div>
+    </a>
+    </article>
+{{ end }}
+</section>
+<script>
+    $(document).ready(function () {
+        $('[data-fancybox="gallery"]').fancybox({
+            buttons: [
+                "zoom",
+                "slideShow",
+                "fullScreen",
+                "download",
+                "thumbs",
+                "close"
+            ],
+            loop: true,
+            touch: {
+                vertical: true,
+                momentum: true
+            },
+            protect: false,
+            // Add the event listeners here, outside the buttons array
+            afterClose: function() {
+                $('.gallery-item').css('cursor', 'zoom-in');
+            },
+            beforeShow: function() {
+                $('.gallery-item').css('cursor', 'zoom-out');
+            },
+            beforeClose: function() {
+                $('.gallery-item').css('cursor', 'zoom-out');
+            }
+        });
+    });
+</script>

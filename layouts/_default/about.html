@@ -1,0 +1,21 @@
+{{ partial "header.html" . }}
+<div id="wrapper">
+  <div id="main">
+      <div class="inner">
+          <header>
+              <h1 style="text-align: center;">{{ .Title }}</h1>
+              <div class="about">
+                <div id="about-pro">
+                <div id="about-img">
+                  <img class="lazy" src="{{ .Page.Params.coverImage }}"/>
+                </div>
+                </div>
+                <div id="about-text">
+                  {{ .Content }}
+                </div>
+              </div>
+          </header>
+      </div>
+  </div>
+</div>
+{{ partial "footer.html" . }}

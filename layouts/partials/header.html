@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{{ .Title }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		{{ $sass := resources.Get "sass/main.scss" }}
+		{{ $style := $sass | resources.ToCSS }}
+		<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+		<noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"/>
+		<link rel="stylesheet" href="/css/fontawesome/all.css">
+		<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+		<script src="/js/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+		<script src="/js/browser.min.js"></script>
+		<script src="/js/breakpoints.min.js"></script>
+		<div class="page loading" style="background:#e5e5e5;--background-color:#e5e5e5; z-index: 1;">
+	</head>
+	<body class="is-preload">
+	<div class="wrap">
+		<!-- Header -->
+		<header id="header">
+		<div class="inner">
+			<!-- Menu -->
+			<div>
+				<a href="{{ .Site.BaseURL }}">HOME</a>
+			</div>
+			<div>
+				<a href="/" class="logo">
+				<span class="symbol"><img src="/images/elling_logo_transparent.png?auto=webp" alt="" /></span>
+				<span class="title">{{ .Site.Params.subtitle }}</span>
+				</a>
+			</div>
+			<!-- Nav -->
+			<nav id="menu-nav">
+				<ul>
+					<li><a href="#menu">Menu</a></li>
+				</ul>
+			</nav>
+			<div>
+				<a href="/about">ABOUT</a>
+			</div>
+		</div>
+		<!--nav aria-label="Main Navigation">
+			<ul>
+			 {{ range .Site.Menus.main }}
+			  <li>
+			   <a href="{{ .URL }}">{{ .Name }}</a>
+			  </li>
+			 {{ end }}
+			</ul>
+		</!--nav-->
+		</header>
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="{{ .Site.BaseURL }}" >Home</a></li>
+				<li><a href="/about">About Me</a></li>
+			</ul>
+		</nav>
+	</div>

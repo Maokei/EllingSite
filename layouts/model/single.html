@@ -1,0 +1,14 @@
+{{ partial "header.html" . }}
+{{ $images := .Page.Params.images }}
+<div id="wrapper">
+<div id="main">
+    <div class="inner">
+        <header>
+            <h1 style="text-align: center;">{{ .Title }}</h1>
+            {{ .Content }}
+        </header>
+    </div>
+    {{ partial "model-gallery" (dict "context" . "gallery_dir" $images) }}
+</div>
+</div>
+{{ partial "footer.html" . }}

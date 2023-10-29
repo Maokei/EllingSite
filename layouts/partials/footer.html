@@ -1,0 +1,49 @@
+	<!-- Footer -->
+    <footer id="footer">
+        <div class="finner">
+            <section id="forms">
+                <h2>Get in touch</h2>
+                <form id="contact-form" action="{{ .Site.Params.contactform }}" method="post" accept-charset="UTF-8">
+                    <div class="fields">
+                        <div class="field half">
+                            <input type="text" name="Name" id="name" placeholder="Name" required/>
+                        </div>
+                        <div class="field half">
+                            <input type="email" name="Email" id="email" placeholder="Email" required/>
+                        </div>
+                        <div class="field">
+                            <textarea name="Message" id="message" placeholder="Message" required></textarea>
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="Send" class="primary" /></li>
+                    </ul>
+                </form>
+            </section>
+            <section id="follow">
+                <h2>Follow</h2>
+                <ul class="icons">
+                    <li><a href="{{ .Site.Params.instagramurl }}" class="icon brands style2 fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+                    <li><a href="mailto:{{ .Site.Params.email }}" class="icon solid style2 fa-envelope" target="_blank"><span class="label">Email</span></a></li>
+                </ul>
+            </section>
+        </div>
+         <div id="fmodal" class="modal">
+            <div class="modal-content">
+                <span id="modal-close" class="close">&times;</span>
+                <div id="modalc">
+                    <p id="tt">initial</p>
+                </div>
+            </div>
+        </div>
+        <section id="copyright">
+            <ul class="copyright">
+                <li>&copy; {{ .Site.Title }}. All rights reserved</li>
+            </ul>
+        </section>
+    </footer>
+    <!-- Scripts -->
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
