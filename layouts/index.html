@@ -1,30 +1,30 @@
 {{ partial "header.html" . }}
-   				<!-- Main -->
-                   <div id="main">
-                    <div class="inner">
-                        <div class="wrap">
-                            <header>
-                                {{ .Content }}
-                            </header>
-                        </div>
-                        <section class="tiles">
-                        {{ range (where .Site.Pages "Section" "model") }}
-                            {{ range .Pages }}
-                            <article class="style1">
-                                <span class="image">
-                                    <img src="{{ .Page.Params.coverImage }}" alt="{{ .Title }}-coverImage" />
-                                </span>
-                                <a href="{{ .RelPermalink }}">
-                                    <h2>{{ .Title }}</h2>
-                                    <div class="content">
-                                        {{ $images := .Page.Params.images }}
-                                        {{ $imgSrc := printf "/static%s" $images }}
-                                        <p>{{ len (readDir $imgSrc) }} {{ .Name }} Photos</p>
-                                    </div>
-                                </a>
-                            </article>
-                            {{ end }}
-                        {{ end }}
+<!-- Main -->
+<div id="main">
+    <div class="inner">
+        <div class="wrap">
+            <header>
+                {{ .Content }}
+            </header>
+        </div>
+        <section class="tiles">
+            {{ range (where .Site.Pages "Section" "model") }}
+            {{ range .Pages }}
+            <article class="style1">
+                <span class="image">
+                    <img src="{{ .Page.Params.coverImage }}" alt="{{ .Title }}-coverImage" />
+                </span>
+                <a href="{{ .RelPermalink }}">
+                    <h2>{{ .Title }}</h2>
+                    <div class="content">
+                        {{ $images := .Page.Params.images }}
+                        {{ $imgSrc := printf "/static%s" $images }}
+                        <p>{{ len (readDir $imgSrc) }} Photos</p>
                     </div>
-                </div>
-    {{ partial "footer.html" . }}
+                </a>
+            </article>
+            {{ end }}
+            {{ end }}
+    </div>
+</div>
+{{ partial "footer.html" . }}
